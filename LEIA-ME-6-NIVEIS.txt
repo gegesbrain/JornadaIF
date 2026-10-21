@@ -1,0 +1,27 @@
+JORNADA IF - INTEGRAÇÃO INICIAL DOS SEIS MAPAS
+
+Alterados: TelaNivel.java, TelaMenu.java, BlocoPuzzle.java.
+Incluídos: desert-ruins-export.tsx e desert-ruins-export.png em assets.
+
+ATENÇÃO: o ZIP original NÃO contém a imagem desert-ruins-export.png, embora
+os mapas a referenciem. A imagem PNG incluída aqui é APENAS UM PLACEHOLDER
+colorido gerado para permitir o carregamento dos TMX. Substitua-a pelo
+seu tileset verdadeiro (256x256) sem mudar o nome do arquivo.
+
+Os mapas não possuem camadas de objetos nem propriedades com valores de
+resposta. O código interpreta os tiles existentes:
+ - Camada de Blocos 1 / 3: terreno (IDs definidos em terreno()).
+ - Camada de Blocos 2: grupos de 2x2 tiles móveis.
+ - Camada de Blocos 3: objetivo (pares 89/90 ou 105/106).
+As expressões e alternativas são provisórias, definidas nos arrays
+EXPRESSOES, RESPOSTAS e ALTERNATIVAS em TelaNivel.java.
+
+O nível 6 tem o terreno repartido entre as camadas 1 e 3.
+O código foi preparado para isso, mas os mapas ainda precisam de testes
+visuais para ajustar posições e regras pedagógicas.
+
+Personalização: TelaMenu.java -> LARGURA_BOTAO, ALTURA_BOTAO,
+ESPACAMENTO. TelaNivel.java -> constantes PULO, GRAVIDADE e controles.
+
+Não foi possível concluir a compilação Gradle neste ambiente porque o
+wrapper tentou baixar Gradle 9.3.0 e não havia conexão de rede.
